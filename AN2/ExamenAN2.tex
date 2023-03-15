@@ -1,0 +1,50 @@
+\documentclass[11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8x]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{layout}
+\usepackage{txfonts}
+\usepackage{geometry}
+\usepackage[round]{natbib}
+\bibliographystyle{plainnat}
+\geometry{a4paper,left=15mm,right=10mm, top=1cm, bottom=1.4cm}
+\usepackage{float}
+\usepackage{listings}
+\usepackage[colorlinks=true, allcolors=Blue]{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{booktabs} %allows for short midlines
+\usepackage{tikz}
+
+%\usepackage{subcaption}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Examen AN1}
+
+
+\begin{document}
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=1.5]
+	\def\Lx{2}
+	\def\Ly{1.5}
+	\draw (0,0) coordinate(q4) node[fill=black,circle,inner sep=1pt,label=below:$q_4$]{} -- ({0.5*\Lx},{0.5*\Ly}) coordinate(q1) node[fill=black,circle,inner sep=1pt,label=right:$q_1$]{} -- (0,\Ly) coordinate(q2) node[fill=black,circle,inner sep=1pt,label=above:$q_2$]{} -- ({-0.5*\Lx},{0.5*\Ly}) coordinate(q3) node[fill=black,circle,inner sep=1pt,label=left:$q_3$]{} -- cycle;
+	\draw [<->] ({-0.45*\Lx},0.5*\Ly) -- node [below] {$L_x$} ({0},0.5*\Ly) -- ({0.45*\Lx},0.5*\Ly) ;
+	\draw [<->] (0,{0.95*\Ly}) -- node [left] {$L_y$}  (0,{0.5*\Ly}) -- (0,0.05);.
+	\node[fill=black,circle,inner sep=1pt,label=below:$P$] at (2*\Lx,0.5*\Ly) {};
+\end{tikzpicture}
+\caption{Figuur die de setup van de vraag weergeeft.}
+\label{fig:ElektrischeQuadrupool}
+\end{figure}
+\paragraph{Vraag:}(Elektrisch quadrupoolmoment) Een elektrish monopoolmoment en dipoolmoment van een star lichaam worden gedefinieerd door wat er gebeurt als je het star lichaam in een uniform elektrisch veld $\vec{E}$ geplaatst wordt. Het monopoolmoment $Q$ is zodanig dat de netto kracht op het star lichaam $\vec{F}$ gegeven wordt door $\vec{F}=Q\vec{E}$. Gelijkaardig hieraan wordt het dipoolmoment $\vec{d}$ gedefinieerd zodanig dat het netto krachtmoment ten opzichte van het centrum van dat star lichaam (in dit geval het centrum van de ruit) $\vec{\tau}$ gegeven wordt door $\vec\tau=\vec{d}\times\vec{E}$.
+\begin{itemize}
+	\item Wat is de netto kracht op het systeem in figuur \ref{fig:ElektrischeQuadrupool} als we het in een uniform elektrisch veld leggen? Leidt hier het monopoolmoment uit af. Doe nu hetzelfde met het krachtmoment ten opzichte van het centrum van de ruit en leidt hier het dipoolmoment uit af. Geef alle mogelijke oplossingen voor $q_1,q_2,q_3$ en $q_4$ zodanig dat $Q=0$ en $\vec{p}=\vec{0}$.
+	\item Het elektrisch veld gegenereerd door een monopool schaalt maximaal als $1/r^2$ ver weg. Het elektrisch veld van een dipool schaalt maximaal als $1/r^3$ ver weg. Hoe schaalt het elektrisch veld van het systeem in figuur \ref{fig:ElektrischeQuadrupool} in het geval dat $Q=0$ en $\vec{p}=\vec{0}$? Bereken ter illustratie het elektrisch veld in punt $P$ dat een afstand $r$ verwijderd is van het centrum van de ruit aan de rechterkant en doe taylor expansie met de aanname dat zowel $L_x$ als $L_y$ veel kleiner zijn dan $r$. Expandeer tot de orde waarop je iets verschillend van nul krijgt en beargumenteer hieruit je schaling als functie van $r$.
+\end{itemize}
+\paragraph{Oplossing:}
+\end{document}

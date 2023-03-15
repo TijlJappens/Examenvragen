@@ -1,0 +1,263 @@
+\documentclass[11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8x]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{layout}
+\usepackage{txfonts}
+\usepackage{geometry}
+\usepackage[round]{natbib}
+\bibliographystyle{plainnat}
+\geometry{a4paper,left=15mm,right=10mm, top=1cm, bottom=1.4cm}
+\usepackage{float}
+\usepackage{listings}
+\usepackage[colorlinks=true, allcolors=Blue]{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{booktabs} %allows for short midlines
+
+%\usepackage{subcaption}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Examen AN1}
+
+
+\begin{document}
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{VoorBotsing}
+		\caption{}
+		\label{fig:VoorBotsing}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{NaBotsing}
+		\caption{}
+		\label{fig:NaBotsing}
+	\end{subfigure}
+	\caption{Figuur \ref{fig:VoorBotsing} geeft de situatie voor de botsing weer en figuur \ref{fig:NaBotsing} die na de botsing.}
+	\label{fig:Botsing}
+\end{figure}
+\paragraph{Vraag 1:}
+Een schijfje met puntmassa $m_1$ en een massieve staaf met lengte $l=4d$ en massa $m_2$ liggen op een wrijvingsloze tafel.  Het schijfje vliegt met een snelheid $v_0 \hat{y}$ richting de staaf die in de richting van de $x$-as gepositioneerd is. Als het schijfje de staaf raakt op 1/4 van de staaflengte $l$ aan de linkerkant van de staaf, zal het schijfje verder bewegen met snelheid $\vec{v}_1$ en de staaf met een lineaire snelheid $\vec{v}_2$. Verder zal de staaf ook beginnen roteren. Zie figuur \ref{fig:Botsing} voor een grafische voorstelling. De richtingen van $\vec v_1$ en $\vec v_2$ op deze tekeningen zijn willekeurig gekozen. Als je aanneemt dat er behoud van energie is tijdens de botsing toon dan aan dat:
+\begin{enumerate}
+	\item $\vec{v}_1$ voldoet aan
+	\begin{equation}
+		v_0^2=v_{1,x}^2+v_{1,y}^2+\alpha v_{1,x}^2+\alpha(v_0-v_{1,y})^2+3\alpha(v_0-v_{1,y})^2
+	\end{equation}
+	waar $\alpha=m_1/m_2$.
+	\item Toon aan dat gegeven een $v_{1,x}$, er precies twee oplossingen zijn voor $v_{1,y}$ als en slechts als
+	\begin{equation}
+		v_0^2>(1+4\alpha)(1+\alpha)v_{1,x}^2.
+	\end{equation}
+	\item Nu gaan we voor de gemakkelijkheid aannemen dat $v_{1,x}=0$. Er zijn nu twee mogelijke oplossingen voor $v_{1,y}$. De eerste is wanneer het schijfje dwars door de staaf gaat en ze elkaar dus niet zouden raken. Wat is de andere oplossing?
+\end{enumerate}
+\paragraph{Oplossing}
+Behoud van energie, momentum in de $x$-richting, momentum in de $y$-richting en angular momentum zijn gegeven door
+\begin{align}
+	\frac{m_1 v_0^2}{2}&=\frac{m_1v_{1,x}^2}{2}+\frac{m_1v_{1,y}^2}{2}+\frac{m_2v_{2,x}^2}{2}+\frac{m_2v_{2,y}^2}{2}+\frac{I\omega^2}{2}\\
+	m_1v_0&=m_1v_{1,y}+m_2v_{2,y}\\
+	0&=m_1v_{1,x}+m_2v_{2,x}\\
+	m_1dv_0&=I\omega+m_1dv_{1,y}
+\end{align}
+respectievelijk. Gebruikmaken van het feit dat $I=\frac{1}{3}d^2m_2$ en invullen dat $\alpha=\frac{m_1}{m_2}$ geeft
+\begin{align}
+	\alpha v_0^2&=\alpha v_{1,x}^2+\alpha v_{1,y}^2+v_{2,x}^2+v_{2,y}^2+\frac{1}{3}d^2\omega^2\\
+	\alpha v_0&=\alpha v_{1,y}+v_{2,y}\\
+	0&=\alpha v_{1,x}+v_{2,x}\\
+	3\alpha v_0&=d\omega+\alpha v_{1,y}.
+\end{align}
+Als je nu de laatste drie vergelijkingen gebruikt en invult in de eerste (en dus alles schrijft in functie van $\vec{v}_1$) krijg je
+\begin{align}
+	\alpha v_0^2&=\alpha v_{1,x}^2+\alpha v_{1,y}^2+\alpha^2 v_{1,x}^2+\alpha^2(v_0-v_{1,y})^2+3\alpha^2(v_0-v_{1,y})^2\\
+	v_0^2&=v_{1,x}^2+v_{1,y}^2+\alpha v_{1,x}^2+\alpha(v_0-v_{1,y})^2+3\alpha(v_0-v_{1,y})^2\\
+	v_0^2&=v_{1,x}^2+v_{1,y}^2+\alpha v_{1,x}^2+\alpha(v_0^2-2v_0v_{1,y}+v_{1,y}^2)+3\alpha(v_0^2-2v_0v_{1,y}+v_{1,y}^2).
+\end{align}
+Hieruit lezen we af
+\begin{align}
+	a&=1+4\alpha&b&=-8\alpha v_0&c&=(1+\alpha)v_{1,x}^2+(4\alpha-1)v_0^2.
+\end{align}
+Dit geeft na een kleine uitwerking:
+\begin{equation}
+	D=4v_0^2-4(1+4\alpha)(1+\alpha)v_{1,x}^2.
+\end{equation}
+Dus we krijgen dat er twee mogelijke oplossingen zijn voor $v_{1,y}$ als en slechts als
+\begin{equation}
+	v_0^2>(1+4\alpha)(1+\alpha)v_{1,x}^2.
+\end{equation}
+Dit vind ik een kei logische uitkomst omdat je inderdaad verwacht dat er alleen oplossingen zijn als $v_0$ groot is ten opzichte van $v_{1,x}$. Ook, als $v_{1,x}=0$ genomen wordt zijn er oplossingen voor elke $\alpha$ wat je inderdaad zou verwachten. Nu zullen we in de volgende deelvraag aannemen dat $v_{1,x}=0$. Dan verwachten we dat er twee oplossingen zijn, namelijk
+\begin{align}
+	v_{1,y}&=\frac{8\alpha v_0-2v_0}{2+8\alpha}=\frac{1-4\alpha}{1+4\alpha}v_0&v_{1,y}&=\frac{8\alpha v_0+2v_0}{2+8\alpha}=v_0.
+\end{align}
+De tweede oplossing komt voor wanneer het bolletje dwars door de staaf vliegt (dat hebben we nog niet uitgesloten) de eerste oplossing is de niet triviale oplossing wanneer er een raking is.
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Schijf1}
+		\caption{}
+		\label{fig:Schijf1}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Schijf2}
+		\caption{}
+		\label{fig:Schijf2}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Schijf3}
+		\caption{}
+		\label{fig:Schijf3}
+	\end{subfigure}
+	\caption{Dit zijn drie verschillende figuren die geroteerd worden rondom punt $p$ met hoeksnelheid $\omega$.}
+	\label{fig:Schijven}
+\end{figure}
+\paragraph{vraag 2:}
+Er worden drie objecten met constante massadichtheid $\sigma$ geroteerd met hoeksnelheid $\omega$ rondom een punt $p$. De eerste is een massieve schijf met als middelpunt $p$ en als straal $R$ (zie fig \ref{fig:Schijf1}). De tweede is een massieve schijf met straal $R/2$ die rechts van het punt $p$ ligt (zie fig \ref{fig:Schijf2}). De derde schijf is schijf 1 met schijf 2 eruit weggehaald (zie fig \ref{fig:Schijf3}).
+\begin{enumerate}
+	\item Wat zijn de traagheidsmomenten $I_1,I_2$ en $I_3$ van de eerste, tweede en derde schijf respectievelijk.
+	\item Toon aan dat de kinetische energie van de rotatie van schijf 1 gelijk is aan de som van kinetische energie\"en van de andere twee schijven.
+\end{enumerate}
+\paragraph{Oplossing}Schijf 1 draait gewoon rondom zijn COM dus we krijgen dat
+\begin{equation}
+	I_1=m_1R^2=2\pi \sigma R^4
+\end{equation}
+Voor schijf 2 krijgen we dat als die rondom zijn COM zou draaien dat dan
+\begin{equation}
+	\tilde I_2=m_2\left(\frac{R}{2}\right)^2=2\pi \sigma \left(\frac{R}{2}\right)^4=\frac{\pi}{8}\sigma R^4.
+\end{equation}
+Als we nu de parallele axis theorem (of Huygens–Steiner theorem) gebruiken krijgen we
+\begin{equation}
+	I_2=\frac{\pi}{8}\sigma R^4+m_2 \left(\frac{R}{2}\right)^2=\frac{\pi}{4}\sigma R^4.
+\end{equation}
+Het traagheidsmoment van van de laatste figuur is simpelweg het verschil tussen de andere twee
+\begin{equation}\label{eq:I3IsI1MinI2}
+	I_3=I_1-I_2=\frac{7\pi}{4}\sigma R^4.
+\end{equation}
+De laatste vraag is triviaal. Dit is omdat als we vergelijking \eqref{eq:I3IsI1MinI2} gebruiken, we krijgen dat:
+\begin{align}
+	E_2+E_3&=\frac{I_2\omega^2}{2}+\frac{I_3\omega^2}{2}\\
+	&=\frac{(I_2+I_3)\omega^2}{2}\\
+	&=\frac{I_1\omega^2}{2}=E_1.
+\end{align}
+
+\newpage
+
+\section{Opgave: James Bond in de achtervolging}
+James Bond is in een achtervolging met een schurk. Beide rijden aan een constante snelheid $v$ over een vlak wegdek. Op een gegeven moment staat er een helling op hun pad met een inclinatiehoek $\theta$ (Fig. 1). De helling heeft een hoogte $h_0$. De massa van James Bond in zijn Astin Martin is $M$ en die van de schurk in zijn vluchtwagen is $2M$. Beschouw beide auto's als puntmassa's. Gedurende de hele oefening mag wrijving verwaarloosd worden.\\
+
+\begin{enumerate}
+    \item De schurk rijdt over de helling en maakt een parabolische beweging (Fig. 2). Wat is het hoogste punt dat de schurk bereikt op zijn traject en op welke afstand van de helling is dit (neem hiervoor het meest rechtse punt van de helling)? Veronderstel dat de snelheid van de schurk constant blijft wanneer deze over de helling rijdt.
+    \item Op datzelfde hoogste punt vuurt de schurk een kogel af met massa $m$ onder een hoek $\theta$ naar beneden (Fig. 3). Net op hetzelfde punt begint James Bond ook aan zijn parabolisch traject. Met welke snelheid moet de kogel afgevuurd worden om James Bond te raken? Veronderstel ook hier dat de snelheid van James Bond constant blijft tijdens het over de helling rijden.
+    \item Stel nu dat de schurk net op tijd kon stoppen voor de helling. James Bond kon echter niet op tijd stoppen en botst met zijn snelheid $v$ recht in het midden van de auto van de schurk. De botsing verloopt volledig elastisch. Bereken de snelheden van James Bond en de schurk na botsing?
+ 
+\end{enumerate}
+
+\begin{figure}
+    \centering
+    \includegraphics[width = \textwidth]{James_Bond.png} 
+\end{figure}
+
+\section{Oplossing}
+
+\paragraph{Oefening 1)} 
+
+We beginnen met de bewegingsvergelijkingen op te stellen voor de vluchtwagen
+\begin{equation}
+    x = x_0 + v_x t + a t^2 /2 = v_{x0} t,
+\end{equation}
+\begin{equation}
+    y = y_0 + v_y t + a t^2 /2 = h_0 + v_{y0} t - gt^2/2.
+\end{equation}
+De componenten van de snelheid zijn
+\begin{equation}
+    v_{x0} = \cos(\theta) v \text{ en } v_{y0} = \sin(\theta) v.
+\end{equation}
+Op het hoogste punt is de snelheid in de y-richting gelijk aan nul. Dus afleiden van vgl. (2) geeft
+\begin{equation}
+    \begin{split}
+        \frac{dy}{dt} &= 0 = v_{y0} - gt,\\
+        &\Rightarrow t = v_{y0} / g,
+    \end{split}
+\end{equation}
+het tijdstip waarop de schurk zijn hoogste punt bereikt. Dus het hoogste punt heeft een hoogte van 
+\begin{equation}
+    \begin{split}
+        y_{\text{max}} &= h_0 + v_{y0} t - gt^2/2 = h_0 + v_{y0}^2 / g - g/2 (v_{y0}^2 / g^2),\\
+        & = h_0 + v_{y0}^2 / (2g).
+    \end{split}
+\end{equation}
+op een afstand van 
+\begin{equation}
+    x_{\text{max}} = v_{x0} t = v_{x0} v_{y0}/g = 2 \sin(2\theta)v^2/g,
+\end{equation}
+waar we voor de laatste gelijkheid gebruik hebben gemaakt van vgl. (3).
+
+\paragraph{Oefening 2)} Als de kogel James Bond raakt, moeten de x- en y-componenten van de beweginsvergelijkingen van James Bond en de kogel op een bepaald moment gelijk zijn aan elkaar. De bewegingsvergelijkingen voor James Bond zijn gelijk aan deze van de schurk en gegeven in vgl. (1) en (2).\\
+De vergelijkingen voor de kogel zijn de volgende
+\begin{equation}
+    x_k = x_{\text{max}} - (u_{x0}-v_{x,\text{max}})t,
+\end{equation}
+\begin{equation}
+    y_k = y_{\text{max}} - (u_{y0}-v_{y,\text{max}})t - gt^2/2,
+\end{equation}
+waarbij het minteken bij de snelheid aangeeft dat de kogel in tegengestelde richting is afgevuurd dan de auto rijdt.\\
+Hierbij weten we ook dat 
+\begin{equation}
+    \begin{split}
+       v_{x,\text{max}} &= v_{x0},\\
+       v_{y,\text{max}} &= 0,
+    \end{split}
+\end{equation}
+en voor de snelheid $u$ geldt ook
+\begin{equation}
+    u_{x0} = \cos(\theta) u \text{ en } u_{y0} = \sin(\theta) u.
+\end{equation}
+We zoeken eerst het tijdstip van botsing via de x-richting
+\begin{align}
+	&&x_{\text{JB}} =& x_{\text{k}},\\
+    \Rightarrow&& v_{x0} t =& v_{x0} v_{y0}/g - (u_{x0}-v_{x,\text{max}})t,\\
+    \Rightarrow&&t =& v_{x0} v_{y0}/(gu_{x0}).
+\end{align}
+Dit invullen in de gelijkheid voor de y-richting geeft dan
+\begin{align}
+        &&y_{\text{JB}} =& y_{\text{k}},\\
+        \Rightarrow&& h_0 + v_{y0} t - gt^2/2 =& h_0 + v_{y0}^2 / (2g) - u_{y0}t- gt^2/2,\\
+        \Rightarrow&&v_{y0} v_{x0} v_{y0}/(gu_{x0}) =& v_{y0}^2 / (2g) - u_{y0} v_{x0} v_{y0}/(gu_{x0}),\\
+        \Rightarrow&&2v_{y0} v_{x0} =& v_{y0} u_{x0} - 2u_{y0} v_{x0} ,\\
+        \Rightarrow&&2\sin(\theta) v \cos(\theta) v =& \sin(\theta) v \cos(\theta) u - 2 \sin(\theta) u \cos(\theta) v,\\
+        \Rightarrow&&2v^2 =& vu - 2 uv,\\
+        \Rightarrow&&2v^2 =& - uv,\\
+         \Rightarrow&&u =& - 2v.\\
+\end{align}
+\paragraph{Oefening 3)} 
+Behoud van impuls geeft
+\begin{equation}
+    M\boldsymbol{v} = M\boldsymbol{u_{\mathrm{JB}}} + 2M\boldsymbol{u_{\mathrm{s}}} \Rightarrow \boldsymbol{u_{\mathrm{JB}}} = \boldsymbol{v} - 2\boldsymbol{u_{\mathrm{s}}}.
+\end{equation}
+Behoud van energie geeft
+\begin{equation}
+    Mv^2/2 = Mu_{\mathrm{JB}}^2/2 + 2Mu_{\mathrm{s}}^2/2 \Rightarrow v^2 = u_{\mathrm{JB}}^2 + 2u_{\mathrm{s}}^2.
+\end{equation}
+Invullen van vgl. (14) geeft dan
+\begin{align}
+    &&v^2 &= (v^2 - 4\boldsymbol{u_{\mathrm{s}}} \boldsymbol{v} + 4u_{\mathrm{s}}^2) + 2u_{\mathrm{s}}^2,\\
+    \Rightarrow&&4\boldsymbol{u_{\mathrm{s}}} \boldsymbol{v} & = 6u_{\mathrm{s}}^2.\\
+    \Rightarrow&&u_{\mathrm{s}}v \cos(\phi) &= 3u_{\mathrm{s}}^2/2,\\
+    \Rightarrow&&u_{\mathrm{s}} &= 2v/3.
+\end{align}
+En dus $u_{\mathrm{JB}} = 0$.\\
+
+
+
+\end{document}
