@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8x]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{layout}
+\usepackage{txfonts}
+\usepackage{geometry}
+\usepackage{physics}
+\usepackage[round]{natbib}
+\bibliographystyle{plainnat}
+\geometry{a4paper,left=15mm,right=10mm, top=1cm, bottom=1.4cm}
+\usepackage{float}
+\usepackage{listings}
+\usepackage[colorlinks=true, allcolors=Blue]{hyperref}
+\usepackage{caption}
+\usepackage{booktabs} %allows for short midlines
+%\usepackage{subcaption}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Bonustoets examen vragen}
+
+
+\begin{document}
+
+\title{Examenvraag ANII}
+\paragraph{Vraag:} Monochromatisch, coherent licht passeert door vijf evenwijdige spleten, ieder een afstand $d$ verwijderd van zijn naaste buur.
+\begin{enumerate}
+	\item Zoek een uitdrukking voor de intensiteit van het interferentiepatroon en druk dit uit in functie van $\delta=2\pi d\sin(\theta)/\lambda$ en $I_{\text{max}}$ met $\theta$ de hoek waaronder de intensiteit gemeten wordt, $\lambda$ de golflengte en $I_{\text{max}}$ de intensiteit die gemeten wordt als $\theta=0$.
+	\item Toon aan dat er drie lokale maxima zijn tussen twee hoofdpieken. Je hebt gegeven dat de enige minima de globale minima zijn.
+	\item Wat is de verhouding tussen de intensiteit van de hoofdpiek en de intensiteit op de locale maxima.
+\end{enumerate}
+\paragraph{Uitwerking: }Ik doe de uitwerking voor de gemakkelijkheid met complexe getallen. Ik neem $\Phi$ zodanig dat $\Re(\Phi(\delta,t))=E(\delta,t)$. We krijgen nu
+\begin{align}
+	\Phi(\delta,t)&=E_0(e^{i\omega t+2i\delta}+e^{i\omega t+i\delta}+e^{i\omega t}+e^{i\omega t-i\delta}+e^{i\omega t-2i\delta})\\
+	&=E_0 e^{i\omega t}(1+2\cos(\delta)+2\cos(2\delta)).
+\end{align}
+Dit maakt dat
+\begin{equation}
+	I=\abs{\Phi}^2=E_0^2(1+2\cos(\delta)+2\cos(2\delta))^2.
+\end{equation}
+Dit betekend dat
+\begin{equation}
+	I_{\text{max}}=25 E_0^2
+\end{equation}
+en dus krijgen we
+\begin{equation}
+	I=\frac{I_{\text{max}}}{25}(1+2\cos(\delta)+2\cos(2\delta))^2.
+\end{equation}
+Dit is het antwoord op de eerste vraag (voor de studenten die niet zo goed kunnen werken met complexe getallen deze oefening is ook goed te doen met de Simpson formules of met het phasor diagram). Voor de tweede vraag moeten we eerst alle extrema bekijken:
+\begin{equation}
+	\partial_\delta I = - \frac{4I_\text{max}}{25} (1+2\cos(\delta)+2\cos(2\delta))(\sin(\delta)+2\sin(2\delta)).
+\end{equation}
+Er zijn nu mogelijkheden dat dit nul is. Oftewel
+\begin{equation}
+	1+2\cos(\delta)+2\cos(2\delta)=0
+\end{equation}
+dit zijn overduidelijk de globale minima. We zijn dus geïnteresseerd in
+\begin{equation}
+	\sin(\delta)=-2\sin(2\delta)=-4\sin(\delta)\cos(\delta).
+\end{equation}
+Hier is aan voldaan in twee gevallen:
+\begin{align}
+	\sin(\delta)&=0&\cos(\delta)&=-\frac{1}{4}.
+\end{align}
+Dit geeft
+\begin{align}
+	\delta&\in \pi\mathbb{N}&\delta&\in\pi-\acos(1/4)+2\pi \mathbb{N}&\delta&\in\pi+\acos(1/4)+2\pi \mathbb{N}.
+\end{align}
+Het is ook duidelijk dat $\delta=2\pi$ het eerste globale maximum is (op $\delta=0$ na). Dit geeft ons dat er drie andere maxima (dit weet je omdat er gegeven is dat er geen andere minima zijn dan de globale) tussen zitten, namelijk
+\begin{align}
+	\delta&=\pi-\acos(1/4)&\delta&=\pi&\delta&=\pi+\acos(1/4).
+\end{align}
+Als je dit invult bekom je:
+\begin{align}
+	I(\pi-\acos(1/4))&=\frac{I_{\text{max}}}{16}&I(\pi)&=\frac{I_{\text{max}}}{25}&I(\pi+\acos(1/4))&=\frac{I_{\text{max}}}{16}.
+\end{align}
+\end{document}
